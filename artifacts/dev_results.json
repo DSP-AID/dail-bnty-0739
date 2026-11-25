@@ -1,0 +1,349 @@
+{
+ "generated_utc": "2026-11-25T02:48:53+00:00",
+ "source": "replay of committed runs/ + samples/ + artifacts/hf_gate.json",
+ "hf_gate": "README.md is public (200); task folders are gated (29/29 tasks return 401 without a granted HF token), so the official runner cannot download them here.",
+ "kit_check_stages": [
+  {
+   "name": "submission.yaml",
+   "status": "pass",
+   "detail": "bnty-0709-harness-v1: openai-compatible/qwen3.8-flash-next-iq3_s, egress llm.example.org:443"
+  },
+  {
+   "name": "files",
+   "status": "warn",
+   "detail": "this folder is not a git repository, and the server builds a commit: what is committed is checked in a repository of its own"
+  },
+  {
+   "name": "build",
+   "status": "pass",
+   "detail": "bundle 110 MiB, built in 73 s; image plebench-serve:c8ce8759b9190654"
+  },
+  {
+   "name": "model",
+   "status": "pass",
+   "detail": "qwen3.8-flash-next-iq3_s (openai-compatible) answered in 8.7 s through the egress proxy"
+  },
+  {
+   "name": "listen",
+   "status": "pass",
+   "detail": "websocket accepted 2 s after start"
+  },
+  {
+   "name": "smoke",
+   "status": "pass",
+   "detail": "hello.txt written, done in 49 s with 1 request(s), no usage frames (optional); final message 'done'"
+  },
+  {
+   "name": "mcp",
+   "status": "pass",
+   "detail": "mcp.txt written, done in 26 s with 5 request(s), no usage frames (optional); final message 'done'"
+  },
+  {
+   "name": "artifacts",
+   "status": "warn",
+   "detail": "no artifacts/ yet: `uv run python eval/run.py /opt/workspace/tasks/bnty_0709/src` writes it"
+  }
+ ],
+ "results": [
+  {
+   "task": "hello",
+   "accessible": true,
+   "graded_officially": false,
+   "run": {
+    "total_steps": 5,
+    "prompt_tokens": 7367,
+    "completion_tokens": 233
+   },
+   "status": "run_locally",
+   "note": "public sample task; run with runner_local.py against an endpoint you own; the official grader needs the gated HF task folder"
+  },
+  {
+   "task": "long-memo",
+   "accessible": true,
+   "graded_officially": false,
+   "run": {
+    "total_steps": 50,
+    "prompt_tokens": 2015301,
+    "completion_tokens": 58270
+   },
+   "status": "run_locally",
+   "note": "public sample task; run with runner_local.py against an endpoint you own; the official grader needs the gated HF task folder"
+  },
+  {
+   "task": "mcp-secret-word",
+   "accessible": true,
+   "graded_officially": false,
+   "run": null,
+   "status": "not_run",
+   "note": "public sample task; run with runner_local.py against an endpoint you own; the official grader needs the gated HF task folder"
+  },
+  {
+   "task": "hello-nudge",
+   "accessible": true,
+   "graded_officially": false,
+   "run": {
+    "total_steps": 4,
+    "prompt_tokens": 2402,
+    "completion_tokens": 78
+   },
+   "status": "run_locally",
+   "note": "committed local run evidence (see runs/)"
+  },
+  {
+   "task": "long-memo-retry",
+   "accessible": true,
+   "graded_officially": false,
+   "run": {
+    "total_steps": 7,
+    "prompt_tokens": 11422,
+    "completion_tokens": 7238
+   },
+   "status": "run_locally",
+   "note": "committed local run evidence (see runs/)"
+  },
+  {
+   "task": "pairing-google-cloud",
+   "accessible": true,
+   "graded_officially": false,
+   "run": {
+    "total_steps": 4,
+    "prompt_tokens": 2409,
+    "completion_tokens": 82
+   },
+   "status": "run_locally",
+   "note": "committed local run evidence (see runs/)"
+  },
+  {
+   "task": "data-hall-mep-routing",
+   "accessible": false,
+   "graded_officially": false,
+   "run": null,
+   "status": "gated_401",
+   "note": "HF dataset folder returns 401 without granted access"
+  },
+  {
+   "task": "fire-test-validation-memo",
+   "accessible": false,
+   "graded_officially": false,
+   "run": null,
+   "status": "gated_401",
+   "note": "HF dataset folder returns 401 without granted access"
+  },
+  {
+   "task": "data-hall-mep-routing-offset",
+   "accessible": false,
+   "graded_officially": false,
+   "run": null,
+   "status": "gated_401",
+   "note": "HF dataset folder returns 401 without granted access"
+  },
+  {
+   "task": "eor-review-corrections",
+   "accessible": false,
+   "graded_officially": false,
+   "run": null,
+   "status": "gated_401",
+   "note": "HF dataset folder returns 401 without granted access"
+  },
+  {
+   "task": "foundation-strategy",
+   "accessible": false,
+   "graded_officially": false,
+   "run": null,
+   "status": "gated_401",
+   "note": "HF dataset folder returns 401 without granted access"
+  },
+  {
+   "task": "landscape-sheet-revision",
+   "accessible": false,
+   "graded_officially": false,
+   "run": null,
+   "status": "gated_401",
+   "note": "HF dataset folder returns 401 without granted access"
+  },
+  {
+   "task": "data-center-site-model",
+   "accessible": false,
+   "graded_officially": false,
+   "run": null,
+   "status": "gated_401",
+   "note": "HF dataset folder returns 401 without granted access"
+  },
+  {
+   "task": "engineers-estimate-check",
+   "accessible": false,
+   "graded_officially": false,
+   "run": null,
+   "status": "gated_401",
+   "note": "HF dataset folder returns 401 without granted access"
+  },
+  {
+   "task": "footing-settlement-verification",
+   "accessible": false,
+   "graded_officially": false,
+   "run": null,
+   "status": "gated_401",
+   "note": "HF dataset folder returns 401 without granted access"
+  },
+  {
+   "task": "solar-supplemental-review",
+   "accessible": false,
+   "graded_officially": false,
+   "run": null,
+   "status": "gated_401",
+   "note": "HF dataset folder returns 401 without granted access"
+  },
+  {
+   "task": "solar-witness-test-package",
+   "accessible": false,
+   "graded_officially": false,
+   "run": null,
+   "status": "gated_401",
+   "note": "HF dataset folder returns 401 without granted access"
+  },
+  {
+   "task": "frame-extension-method",
+   "accessible": false,
+   "graded_officially": false,
+   "run": null,
+   "status": "gated_401",
+   "note": "HF dataset folder returns 401 without granted access"
+  },
+  {
+   "task": "fire-solve-convergence",
+   "accessible": false,
+   "graded_officially": false,
+   "run": null,
+   "status": "gated_401",
+   "note": "HF dataset folder returns 401 without granted access"
+  },
+  {
+   "task": "les-mesh-resolution",
+   "accessible": false,
+   "graded_officially": false,
+   "run": null,
+   "status": "gated_401",
+   "note": "HF dataset folder returns 401 without granted access"
+  },
+  {
+   "task": "mv-conveyance-study",
+   "accessible": false,
+   "graded_officially": false,
+   "run": null,
+   "status": "gated_401",
+   "note": "HF dataset folder returns 401 without granted access"
+  },
+  {
+   "task": "data-hall-device-takeoff",
+   "accessible": false,
+   "graded_officially": false,
+   "run": null,
+   "status": "gated_401",
+   "note": "HF dataset folder returns 401 without granted access"
+  },
+  {
+   "task": "division-26-specifications",
+   "accessible": false,
+   "graded_officially": false,
+   "run": null,
+   "status": "gated_401",
+   "note": "HF dataset folder returns 401 without granted access"
+  },
+  {
+   "task": "heat-rejection-life-cycle-cost",
+   "accessible": false,
+   "graded_officially": false,
+   "run": null,
+   "status": "gated_401",
+   "note": "HF dataset folder returns 401 without granted access"
+  },
+  {
+   "task": "cooling-water-flush-plan",
+   "accessible": false,
+   "graded_officially": false,
+   "run": null,
+   "status": "gated_401",
+   "note": "HF dataset folder returns 401 without granted access"
+  },
+  {
+   "task": "wind-diaphragm-shear",
+   "accessible": false,
+   "graded_officially": false,
+   "run": null,
+   "status": "gated_401",
+   "note": "HF dataset folder returns 401 without granted access"
+  },
+  {
+   "task": "seismic-diaphragm-shear",
+   "accessible": false,
+   "graded_officially": false,
+   "run": null,
+   "status": "gated_401",
+   "note": "HF dataset folder returns 401 without granted access"
+  },
+  {
+   "task": "roof-deck-design",
+   "accessible": false,
+   "graded_officially": false,
+   "run": null,
+   "status": "gated_401",
+   "note": "HF dataset folder returns 401 without granted access"
+  },
+  {
+   "task": "fill-compaction-acceptance",
+   "accessible": false,
+   "graded_officially": false,
+   "run": null,
+   "status": "gated_401",
+   "note": "HF dataset folder returns 401 without granted access"
+  },
+  {
+   "task": "shoring-design-verification",
+   "accessible": false,
+   "graded_officially": false,
+   "run": null,
+   "status": "gated_401",
+   "note": "HF dataset folder returns 401 without granted access"
+  },
+  {
+   "task": "emergency-spillway-check",
+   "accessible": false,
+   "graded_officially": false,
+   "run": null,
+   "status": "gated_401",
+   "note": "HF dataset folder returns 401 without granted access"
+  },
+  {
+   "task": "pre-application-capacity-response",
+   "accessible": false,
+   "graded_officially": false,
+   "run": null,
+   "status": "gated_401",
+   "note": "HF dataset folder returns 401 without granted access"
+  },
+  {
+   "task": "permission-to-operate-memo",
+   "accessible": false,
+   "graded_officially": false,
+   "run": null,
+   "status": "gated_401",
+   "note": "HF dataset folder returns 401 without granted access"
+  },
+  {
+   "task": "backfeed-energization-reply",
+   "accessible": false,
+   "graded_officially": false,
+   "run": null,
+   "status": "gated_401",
+   "note": "HF dataset folder returns 401 without granted access"
+  },
+  {
+   "task": "lv-cable-sizing",
+   "accessible": false,
+   "graded_officially": false,
+   "run": null,
+   "status": "gated_401",
+   "note": "HF dataset folder returns 401 without granted access"
+  }
+ ]
+}

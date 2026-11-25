@@ -1,4 +1,4 @@
-"""PLE harness v1: a WebSocket server solving tasks over the serve protocol.
+"""PLE harness v2: a WebSocket server solving tasks over the serve protocol.
 
 Listens on $PORT (taskbridge.run). For each task it runs `agent_core.run_loop`
 against an OpenAI-compatible model endpoint, driving the task container through
@@ -6,6 +6,8 @@ the single `exec` tool, and returns the model's final message.
 
 Environment (set by the kit / evaluation server per docs/models.md):
   OPENAI_BASE_URL (or MODEL_BASE_URL), MODEL_NAME, OPENAI_API_KEY (or MODEL_API_KEY).
+A google-cloud gemini pairing exports no OpenAI URL; the Gemini API's own
+OpenAI-compatible path (GOOGLE_GEMINI_BASE_URL + /v1beta/openai) is used then.
 Optional: MAX_STEPS (default 120), MAX_OUTPUT_TOKENS (default 4096).
 """
 
@@ -17,9 +19,31 @@ import os
 import agent_core
 import taskbridge
 
-MODEL = os.environ.get("MODEL_NAME", "model")
-BASE_URL = os.environ.get("OPENAI_BASE_URL") or os.environ.get("MODEL_BASE_URL") or "http://127.0.0.1:8000/v1"
-API_KEY = os.environ.get("OPENAI_API_KEY") or os.environ.get("MODEL_API_KEY") or ""
+
+def resolve_endpoint(environ=None):
+  """Model endpoint from env, in the order the kit exports it.
+
+  An explicit OpenAI URL always wins (that is how `kit check --model-base-url`
+  and our own server are pointed). A bare google-cloud gemini pairing exports
+  only GOOGLE_GEMINI_BASE_URL + GEMINI_API_KEY, so the Gemini API's own
+  OpenAI-compatible path is derived from it. Unit-tested in
+  tests/test_submission_yaml.py.
+  """
+  env = os.environ if environ is None else environ
+  gemini = env.get("GOOGLE_GEMINI_BASE_URL", "")
+  base_url = (
+      env.get("OPENAI_BASE_URL")
+      or env.get("MODEL_BASE_URL")
+      or (gemini.rstrip("/") + "/v1beta/openai" if gemini else "")
+      or "http://127.0.0.1:8000/v1"
+  )
+  api_key = (
+      env.get("OPENAI_API_KEY") or env.get("MODEL_API_KEY") or env.get("GEMINI_API_KEY") or ""
+  )
+  return env.get("MODEL_NAME", "model"), base_url, api_key
+
+
+MODEL, BASE_URL, API_KEY = resolve_endpoint()
 MAX_STEPS = int(os.environ.get("MAX_STEPS", "120"))
 MAX_OUTPUT_TOKENS = int(os.environ.get("MAX_OUTPUT_TOKENS", "4096"))
 

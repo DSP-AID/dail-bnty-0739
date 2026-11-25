@@ -1,9 +1,10 @@
-# Harness v1 for the Physical-Engineering's Last Exam harness competition.
-# The model endpoint is configured at run time (see README.md); the committed
-# model_base_url below is a placeholder, as the kit requires a public DNS name.
-name: bnty-0709-harness-v1
-model_api: openai-compatible/qwen3.8-flash-next-iq3_s
-model_base_url: https://llm.example.org/v1
+# Harness v2 for the Physical-Engineering's Last Exam harness competition.
+# The final entry pairs this harness with an organizer-served google-cloud
+# model (the kit accepts only google-cloud/* pairings at final entry, see
+# docs/models.md). Locally that pairing runs through MODEL_PROXY_URL /
+# MODEL_PROXY_KEY pointed at a model server of your own; no key is committed.
+name: bnty-0739-harness-v2
+model_api: google-cloud/gemini-3.8-flash
 install: >-
   uv venv --python 3.12 /opt/harness/venv
   && uv pip install --python /opt/harness/venv/bin/python -r {src}/requirements.txt

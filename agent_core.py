@@ -126,6 +126,10 @@ async def run_loop(
       {"role": "user", "content": instruction},
   ]
   steps, metrics = [], {"total_steps": 0, "prompt_tokens": 0, "completion_tokens": 0}
+  # one nudge turns a mid-task "pause" (a content-only reply that announces
+  # more work) back into work; see the pause-is-not-a-finish bug in KAGGLE_WRITEUP.
+  nudged = False
+  worked = False
 
   def note(text):
     if log:
@@ -146,7 +150,24 @@ async def run_loop(
     steps.append({"step_id": step, "source": "model", "message": msg})
     if not calls:
       final = (msg.get("content") or "").strip()
+      if worked and not nudged:
+        # a content-only reply after real work is usually a pause, not the end
+        nudged = True
+        messages.append(msg)
+        messages.append(
+            {
+                "role": "user",
+                "content": (
+                    "Before stopping, use exec to verify every deliverable the"
+                    " task asked for exists on disk. If any is missing keep"
+                    " working; if all are there reply with your final message."
+                ),
+            }
+        )
+        note(f"step {step}: pause nudge after a content-only reply")
+        continue
       return final or "(the model returned no final message)", steps, metrics
+    worked = True
     messages.append(msg)
     for call in calls:
       fn = call.get("function", {})

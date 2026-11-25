@@ -1,0 +1,301 @@
+{
+ "probed_utc": "2026-11-24T23:05:37+00:00",
+ "hf_token_present": false,
+ "tasks_repo": "google/physical-engineerings-last-exam",
+ "tasks_revision": "b3857a3fea39a695e18f845d4a88f29442e96e75",
+ "readme_status": 200,
+ "tasks": [
+  {
+   "id": "data-hall-mep-routing",
+   "sha256": "sha256: 4f11a0a62f11c2b0ea6347d7281a6297eed83087d1ae83d5cc42a9dd79f1c940",
+   "files": {
+    "task.toml": 401,
+    "instruction.md": 401,
+    "release.json": 401,
+    "eval.yaml": 401
+   }
+  },
+  {
+   "id": "fire-test-validation-memo",
+   "sha256": "sha256: fbac4a6d391bb63a001726e45ab139db862495e09c27401dedc1b81b7e4d6b23",
+   "files": {
+    "task.toml": 401,
+    "instruction.md": 401,
+    "release.json": 401,
+    "eval.yaml": 401
+   }
+  },
+  {
+   "id": "data-hall-mep-routing-offset",
+   "sha256": "sha256: 9c208ede28b2d889b0242f7a594cd8f6c1f444a86e811695f01326a0ab49ede6",
+   "files": {
+    "task.toml": 401,
+    "instruction.md": 401,
+    "release.json": 401,
+    "eval.yaml": 401
+   }
+  },
+  {
+   "id": "eor-review-corrections",
+   "sha256": "sha256: a7287f122968564ce05341f6bcddaf03e38f327809f8eb8fb35035234b3a8ca9",
+   "files": {
+    "task.toml": 401,
+    "instruction.md": 401,
+    "release.json": 401,
+    "eval.yaml": 401
+   }
+  },
+  {
+   "id": "foundation-strategy",
+   "sha256": "sha256: 413ab29c0445d25ea74b8ed7838e2dca950aa47ee11add08aea80d9ed111fdce",
+   "files": {
+    "task.toml": 401,
+    "instruction.md": 401,
+    "release.json": 401,
+    "eval.yaml": 401
+   }
+  },
+  {
+   "id": "landscape-sheet-revision",
+   "sha256": "sha256: 70702047d63b972ccfff45b776f9abb1c0f11f01d2658173a4768aba1394e03f",
+   "files": {
+    "task.toml": 401,
+    "instruction.md": 401,
+    "release.json": 401,
+    "eval.yaml": 401
+   }
+  },
+  {
+   "id": "data-center-site-model",
+   "sha256": "sha256: 6fb3dedb763e9328bef5abd4feef73a22a6b5eb11fbf0e15779e3a82a67640b1",
+   "files": {
+    "task.toml": 401,
+    "instruction.md": 401,
+    "release.json": 401,
+    "eval.yaml": 401
+   }
+  },
+  {
+   "id": "engineers-estimate-check",
+   "sha256": "sha256: 35852ade3d40329a0f14b7a8a91acb7ff04db4a912305570c2a59352dd427866",
+   "files": {
+    "task.toml": 401,
+    "instruction.md": 401,
+    "release.json": 401,
+    "eval.yaml": 401
+   }
+  },
+  {
+   "id": "footing-settlement-verification",
+   "sha256": "sha256: 96124d80a625994dd5f971ed422752c6b06622806cf252faec31202a2ceb1d79",
+   "files": {
+    "task.toml": 401,
+    "instruction.md": 401,
+    "release.json": 401,
+    "eval.yaml": 401
+   }
+  },
+  {
+   "id": "solar-supplemental-review",
+   "sha256": "sha256: 4bdca16af73ac60f1b5ad92b0bee8b2391b9781c72ddca5807bafb75e90c29fb",
+   "files": {
+    "task.toml": 401,
+    "instruction.md": 401,
+    "release.json": 401,
+    "eval.yaml": 401
+   }
+  },
+  {
+   "id": "solar-witness-test-package",
+   "sha256": "sha256: e747710ee729f2c97c54b6b0a1c550c6b51100ab58b6f142ee062c2538edbed0",
+   "files": {
+    "task.toml": 401,
+    "instruction.md": 401,
+    "release.json": 401,
+    "eval.yaml": 401
+   }
+  },
+  {
+   "id": "frame-extension-method",
+   "sha256": "sha256: a80d7477c8be2ad8b36c13a20f8f9c9a7e5d2d43b1f35ba8b4164477e7f04745",
+   "files": {
+    "task.toml": 401,
+    "instruction.md": 401,
+    "release.json": 401,
+    "eval.yaml": 401
+   }
+  },
+  {
+   "id": "fire-solve-convergence",
+   "sha256": "sha256: 32c0619972e1e53f3e300f83b8e5dfa014da4e65f6f8e2b61c319938695e8159",
+   "files": {
+    "task.toml": 401,
+    "instruction.md": 401,
+    "release.json": 401,
+    "eval.yaml": 401
+   }
+  },
+  {
+   "id": "les-mesh-resolution",
+   "sha256": "sha256: 0471fe49441496ed307eb98df8a9b9b61ec6d673b35fe15ba1b3f1dfeb1cf875",
+   "files": {
+    "task.toml": 401,
+    "instruction.md": 401,
+    "release.json": 401,
+    "eval.yaml": 401
+   }
+  },
+  {
+   "id": "mv-conveyance-study",
+   "sha256": "sha256: b127d54d2a9e07ef6c954743b8d8d0156832513915253699933a7e56438d7ec1",
+   "files": {
+    "task.toml": 401,
+    "instruction.md": 401,
+    "release.json": 401,
+    "eval.yaml": 401
+   }
+  },
+  {
+   "id": "data-hall-device-takeoff",
+   "sha256": "sha256: e3c14d5bccebb858662865eae8a7704173a857e54674bb8546e6849e79d34c11",
+   "files": {
+    "task.toml": 401,
+    "instruction.md": 401,
+    "release.json": 401,
+    "eval.yaml": 401
+   }
+  },
+  {
+   "id": "division-26-specifications",
+   "sha256": "sha256: 16408f68a7aa2ae650c4a8dba25a2e82482c9d254bbd14d5d5e58f645cf51e49",
+   "files": {
+    "task.toml": 401,
+    "instruction.md": 401,
+    "release.json": 401,
+    "eval.yaml": 401
+   }
+  },
+  {
+   "id": "heat-rejection-life-cycle-cost",
+   "sha256": "sha256: a370ce56d0a314e01a6e30bf43284bfd90ae09febb21915cf4b35988f0f344b5",
+   "files": {
+    "task.toml": 401,
+    "instruction.md": 401,
+    "release.json": 401,
+    "eval.yaml": 401
+   }
+  },
+  {
+   "id": "cooling-water-flush-plan",
+   "sha256": "sha256: 4a1222e5abc2139a2fb9cff3de7c5bf30a16635d05ce9c86b3461323cdc87729",
+   "files": {
+    "task.toml": 401,
+    "instruction.md": 401,
+    "release.json": 401,
+    "eval.yaml": 401
+   }
+  },
+  {
+   "id": "wind-diaphragm-shear",
+   "sha256": "sha256: 848ac589c41d55ffcd364b6fef9f1dff196c3cc6067a2e630ea0807c818fc5ef",
+   "files": {
+    "task.toml": 401,
+    "instruction.md": 401,
+    "release.json": 401,
+    "eval.yaml": 401
+   }
+  },
+  {
+   "id": "seismic-diaphragm-shear",
+   "sha256": "sha256: b0f8253ef303f57e86c249fb2d5e893731d39829b89a5601c913d77a32d386d2",
+   "files": {
+    "task.toml": 401,
+    "instruction.md": 401,
+    "release.json": 401,
+    "eval.yaml": 401
+   }
+  },
+  {
+   "id": "roof-deck-design",
+   "sha256": "sha256: 37643fef0fb323f7447f248c9f2716c055bc23def1a6d7a639361543231715b1",
+   "files": {
+    "task.toml": 401,
+    "instruction.md": 401,
+    "release.json": 401,
+    "eval.yaml": 401
+   }
+  },
+  {
+   "id": "fill-compaction-acceptance",
+   "sha256": "sha256: 5dcaf60aa58986d91b4b13f2109f7f0aa888c76bb996c7bf934d9c7fa000de84",
+   "files": {
+    "task.toml": 401,
+    "instruction.md": 401,
+    "release.json": 401,
+    "eval.yaml": 401
+   }
+  },
+  {
+   "id": "shoring-design-verification",
+   "sha256": "sha256: 0748e5de15dccd8c77d4f2cf94f69aebcfb60edad93c0e2ab03eb10c9eeced32",
+   "files": {
+    "task.toml": 401,
+    "instruction.md": 401,
+    "release.json": 401,
+    "eval.yaml": 401
+   }
+  },
+  {
+   "id": "emergency-spillway-check",
+   "sha256": "sha256: b20319afb3eae5714afa4c9f7251e9539ee6b81cba12b713e144ae0788972500",
+   "files": {
+    "task.toml": 401,
+    "instruction.md": 401,
+    "release.json": 401,
+    "eval.yaml": 401
+   }
+  },
+  {
+   "id": "pre-application-capacity-response",
+   "sha256": "sha256: e210708581cb87d0f92c6bf90816774e067edd9b0302a7f452efa627af2e581d",
+   "files": {
+    "task.toml": 401,
+    "instruction.md": 401,
+    "release.json": 401,
+    "eval.yaml": 401
+   }
+  },
+  {
+   "id": "permission-to-operate-memo",
+   "sha256": "sha256: bc98ef15469c7082793eb0b8adfc319d020b7bafbc6e8b571e7932a631fcb4cd",
+   "files": {
+    "task.toml": 401,
+    "instruction.md": 401,
+    "release.json": 401,
+    "eval.yaml": 401
+   }
+  },
+  {
+   "id": "backfeed-energization-reply",
+   "sha256": "sha256: 6c0f4273546bcf0fa6e311f7667e133b582f87520918e08a586e1e94c041a656",
+   "files": {
+    "task.toml": 401,
+    "instruction.md": 401,
+    "release.json": 401,
+    "eval.yaml": 401
+   }
+  },
+  {
+   "id": "lv-cable-sizing",
+   "sha256": "sha256: a0d86bb4f1d6b635bdbc93fdb0747289b473ea9795e59999303f844886aacc5e",
+   "files": {
+    "task.toml": 401,
+    "instruction.md": 401,
+    "release.json": 401,
+    "eval.yaml": 401
+   }
+  }
+ ],
+ "blocked_task_count": 29,
+ "conclusion": "README.md is public (200); task folders are gated (29/29 tasks return 401 without a granted HF token), so the official runner cannot download them here."
+}

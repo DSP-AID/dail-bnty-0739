@@ -47,8 +47,11 @@ def test_loop_two_steps_then_final():
   final, steps, metrics = asyncio.run(agent_core.run_loop("do it", call_model, exec_tool))
   assert final == "DONE"
   assert ran == ["ls"]
-  assert metrics["total_steps"] == 2
-  assert metrics["prompt_tokens"] == 30  # 10 + 20 across two model calls
+  # the content-only reply after work gets one verification nudge, then the
+  # model's next message is accepted as final (pause-is-not-a-finish fix)
+  assert metrics["total_steps"] == 3
+  assert calls[-1][-2:][0]["content"] == "DONE"
+  assert "verify" in calls[-1][-1]["content"]
   # the tool result reached the model as a tool message
   tool_msgs = [m for m in calls[1] if m.get("role") == "tool"]
   assert tool_msgs and tool_msgs[0]["content"].startswith("ok: ls")
@@ -94,6 +97,45 @@ def test_time_guard_stops_the_loop():
   assert final == "late"
 
 
+def test_pause_nudge_once_then_final():
+  """A content-only reply after real work gets exactly one verification nudge."""
+  ran = []
+
+  async def exec_tool(command):
+    ran.append(command)
+    return "ok"
+
+  pause = {"role": "assistant", "content": "I will now write the file."}
+  call_model, calls = script_model(
+      [tool_call("exec", "ls"), pause, {"role": "assistant", "content": "done"}]
+  )
+  final, _, metrics = asyncio.run(agent_core.run_loop("t", call_model, exec_tool))
+  assert final == "done"
+  assert metrics["total_steps"] == 3
+  # the nudge reached the model as a user message right after the pause
+  nudges = [m for m in calls[2] if m.get("role") == "user" and "verify" in m["content"]]
+  assert len(nudges) == 1
+
+  # without the fix this run would have ended at the pause; a second pause
+  # after the nudge is accepted as final (the nudge never repeats)
+  call_model, _ = script_model(
+      [tool_call("exec", "ls"), pause, pause, {"role": "assistant", "content": "x"}]
+  )
+  final, _, metrics = asyncio.run(agent_core.run_loop("t", call_model, exec_tool))
+  assert final == "I will now write the file."
+  assert metrics["total_steps"] == 3
+
+
+def test_first_reply_without_work_is_final():
+  async def exec_tool(command):
+    return ""
+
+  call_model, _ = script_model([{"role": "assistant", "content": "nothing to do"}])
+  final, _, metrics = asyncio.run(agent_core.run_loop("t", call_model, exec_tool))
+  assert final == "nothing to do"
+  assert metrics["total_steps"] == 1
+
+
 def test_output_cut_keeps_head_and_tail():
   text = "H" * 5_000 + "M" * 20_000 + "T" * 5_000
   cut = agent_core._cut(text)
@@ -126,7 +168,7 @@ def test_mcp_tool_dispatch():
   final, steps, _ = asyncio.run(
       agent_core.run_loop("t", call_model, exec_tool, mcp_tool=mcp_tool)
   )
-  assert final == "done"
+  assert final == "done"  # accepted after the one verification nudge
   assert seen == [("apps__secret_word", {})]
   tool_msgs = [s for s in steps if s["source"] == "tool"]
   assert tool_msgs[0]["message"]["tool"] == "apps__secret_word"
